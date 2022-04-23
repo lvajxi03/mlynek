@@ -4,8 +4,8 @@
 Unit tests for Primitive types
 """
 
-from mtypes import PawnType
-from primi import Pawn, Player
+from mlynek.mtypes import PawnType
+from mlynek.primi import Pawn, Player
 
 
 def test_pawn_1():
