@@ -21,7 +21,7 @@ class Cell:
             'top': None,
             'bottom': None,
             'nw': None,
-            'sw': None
+            'sw': None,
             'se': None,
             'ne': None
         }
