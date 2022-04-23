@@ -21,8 +21,7 @@ class BoardType(enum.IntEnum):
     """
     Board type: 3, 6, 9 or 12 pawns
     """
-    THREE = 0,
-    SIX = 1,
-    NINE = 2,
+    THREE = 0
+    SIX = 1
+    NINE = 2
     TWELVE = 3
-

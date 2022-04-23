@@ -15,14 +15,16 @@ class Cell:
         """
         Create cell instance
         """
-        self.left = None
-        self.right = None
-        self.top = None
-        self.bottom = None
-        self.nw = None
-        self.sw = None
-        self.ne = None
-        self.se = None
+        self.neighbours = {
+            'left': None,
+            'right': None,
+            'top': None,
+            'bottom': None,
+            'nw': None,
+            'sw': None
+            'se': None,
+            'ne': None
+        }
 
 
 class Board:
