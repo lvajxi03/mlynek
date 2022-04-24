@@ -11,10 +11,12 @@ class Cell:
     """
     Place where you put the pawn(s)
     """
-    def __init__(self):
+    def __init__(self, label: str):
         """
         Create cell instance
         """
+        assert label is not None
+        self.label = label
         self.neighbours = {
             'left': None,
             'right': None,
@@ -25,6 +27,27 @@ class Cell:
             'se': None,
             'ne': None
         }
+        self.pawn = None
+
+    def put(self, pawn):
+        """
+        Put a pawn on a cell
+        :param pawn: Pawn to put on a cell
+        :return: True if pawn is put here, False otherwise
+        """
+        assert pawn is not None
+        if self.pawn:
+            return False
+        self.pawn = pawn
+        return True
+
+    def pop(self):
+        """
+        Pick the pawn from a cell
+        :return: Pawn just picked up
+        """
+        pawn, self.pawn = self.pawn, None
+        return pawn
 
 
 class Board:
@@ -45,8 +68,11 @@ class Board:
         Create board for three pawns, from factory
         :return: new board
         """
+        labels = ["a1", "a2", "a3", "b1", "b2", "b3", "c1", "c2", "c3"]
         board = Board(BoardType.THREE)
-        board.cells = [Cell() for _ in range(0, 9)]
+        for label in labels:
+            cell = Cell(label)
+            board.cells.append(cell)
         return board
 
     @staticmethod
